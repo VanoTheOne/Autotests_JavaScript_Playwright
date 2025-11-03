@@ -20,28 +20,35 @@ test.describe(`User profile page tests`, function () {
   });
 
   test.describe(`Edit profile page tests`, function () {
-    // test(`Should check if username is changed`, async ({ page }) => {
-    //   await accountMenu.openUserProfile();
-    //   await profilePage.openEditProfilePage();
-    //   const newUsername = `Ivan-666666`;
-    //   await editProfilePage.changeUsername(newUsername);
-    //   await editProfilePage.backToUserProfile();
-    //   await expect(page).toHaveTitle(`${newUsername}'s Profile - IMDb`);
-    // });
-    // test(`Should check if user Bio is changed`, async ({ page }) => {
-    //   await accountMenu.openUserProfile();
-    //   await profilePage.openEditProfilePage();
-    //   const newUserBio = `Playwright1`;
-    //   await editProfilePage.changeUserBio(newUserBio);
-    //   await editProfilePage.backToUserProfile();
-    //   await expect(await profilePage.userBio).toHaveText(newUserBio);
-    // });
-  });
+    test(`Should check if username is changed`, async ({ page }) => {
+      await accountMenu.openUserProfile();
+      await profilePage.openEditProfilePage();
+      const newUsername = `Ivan-66666`;
+      await editProfilePage.changeUsername(newUsername);
+      await editProfilePage.backToUserProfile();
+      await expect(page).toHaveTitle(`${newUsername}'s Profile - IMDb`);
+    });
+    test(`Should check if user Bio is changed`, async ({ page }) => {
+      await accountMenu.openUserProfile();
+      await profilePage.openEditProfilePage();
+      const newUserBio = `Playwright`;
+      await editProfilePage.changeUserBio(newUserBio);
+      await editProfilePage.backToUserProfile();
+      await expect(await profilePage.userBio).toHaveText(newUserBio);
+    });
 
-  // test.describe(``, function () {
-  //   test(``, async ({ page }) => {
-  //     await accountMenu.openUserProfile();
-  //     await profilePage.openAccountSettings();
-  //   });
-  // });
+    test(`Should check if user photo is uploaded`, async ({ page }) => {
+      await accountMenu.openUserProfile();
+      await profilePage.openEditProfilePage();
+      await editProfilePage.uploadUserProfileImage('D:\\JS\\picture.jpg');
+      await expect(await profilePage.userProfileImage).toBe();
+    });
+
+    test(`Should check if user photo is deleted`, async ({ page }) => {
+      await accountMenu.openUserProfile();
+      await profilePage.openEditProfilePage();
+      await editProfilePage.deleteUserProfileImage();
+      await expect(await profilePage.noUserProfileImage).toBe();
+    });
+  });
 });

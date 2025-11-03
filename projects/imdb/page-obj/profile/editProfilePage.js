@@ -37,6 +37,30 @@ class EditProfilePage extends Base {
     return this.page.locator('div[role="dialog"]');
   }
 
+  get photoInput() {
+    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//input');
+  }
+
+  get saveUserProfileImageButton() {
+    return this.page.locator('//div[@data-testid="promptable"]//button[@data-testid="upe-image-upload-prompt-save"]');
+  }
+
+  get userProfileImage() {
+    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//img');
+  }
+
+  get noUserProfileImage() {
+    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//svg');
+  }
+
+  get deleteImageButton() {
+    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//button[@data-testid="upe-image-delete"]');
+  }
+
+  get confirmDeleteImageButton() {
+    return this.page.locator('//div[@data-testid="upe-image-delete-prompt"]//button[@data-testid="prompt-saveButton"]');
+  }
+
   async changeUsername(newUsername) {
     await this.page.waitForTimeout(2000);
     await this.editUsernameButton.click();
@@ -57,6 +81,23 @@ class EditProfilePage extends Base {
 
   async backToUserProfile() {
     await this.backButton.click();
+  }
+
+  async uploadUserProfileImage(photoDir) {
+    await this.page.waitForTimeout(2000);
+    await this.photoInput.setInputFiles(photoDir);
+    await this.saveUserProfileImageButton.waitFor({ state: 'visible' });
+    await this.saveUserProfileImageButton.click();
+  }
+
+  async deleteUserProfileImage() {
+    await this.page.waitForTimeout(2000);
+    if (await this.deleteImageButton.isVisible()) {
+      await this.deleteImageButton.click();
+      await this.confirmDeleteImageButton.click();
+    } else {
+      console.log('Delete button not visible');
+    }
   }
 }
 
