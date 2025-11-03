@@ -6,7 +6,7 @@ class Header extends Base {
   }
 
   get signInButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//div[@class="sc-c12860f-0 dajuGE nav__userMenu"]/a');
+    return this.page.locator('//nav[@id="imdbHeader"]//a[@class="ipc-btn ipc-btn--single-padding ipc-btn--center-align-content ipc-btn--default-height ipc-btn--core-baseAlt ipc-btn--theme-baseAlt ipc-btn--button-radius imdb-header__signin-text"]');
   }
 
   get watchlistButton() {

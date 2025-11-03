@@ -6,7 +6,7 @@ class AccountMenu extends Base {
   }
 
   get accountMenuButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//div[@class="sc-c12860f-0 dajuGE nav__userMenu"]//label[contains (@class, "ipc-btn ipc-btn--single-padding")]');
+    return this.page.locator('//nav[@id="imdbHeader"]//div[contains (@class, "navbar__flyout--breakpoint-m")]//label[contains (@class, "navbar__user-menu-toggle__button")]');
   }
 
   get accountMenuYourProfileButton() {

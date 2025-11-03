@@ -19,7 +19,7 @@ test.describe('Account menu tests', function () {
   test.describe(`Account menu smoke tests`, function () {
     // test(`Should check the transition to the user's profile page`, async ({ page }) => {
     //   await accountMenu.openUserProfile();
-    //   await expect(page).toHaveTitle(`Ivan-0758's Profile - IMDb`);
+    //   await expect(page).toHaveTitle(/^Ivan-\d+'s Profile - IMDb$/);
     // });
     // test(`Should check the transition to the user's watchlist page`, async ({ page }) => {
     //   await accountMenu.openUserWatchlist();

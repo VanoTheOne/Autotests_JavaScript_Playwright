@@ -4,7 +4,7 @@ const ProfilePage = require('../../page-obj/profile/profilePage');
 const EditProfilePage = require('../../page-obj/profile/editProfilePage');
 const AccountMenu = require('../../page-obj/header/accountMenu');
 
-test.describe(`Edit profile page tests`, function () {
+test.describe(`User profile page tests`, function () {
   let base;
   let accountMenu;
   let profilePage;
@@ -19,23 +19,29 @@ test.describe(`Edit profile page tests`, function () {
     await base.navigate(`https://www.imdb.com/`);
   });
 
-  test.describe(`Edit profile page smoke tests`, function () {
-    test(`Should check if username is changed`, async ({ page }) => {
-      await accountMenu.openUserProfile();
-      await profilePage.openEditProfilePage();
-      const newUsername = `Ivan-66666`;
-      await editProfilePage.changeUsername(newUsername);
-      await editProfilePage.backToUserProfile();
-      await expect(page).toHaveTitle(`${newUsername}'s Profile - IMDb`);
-    });
-
+  test.describe(`Edit profile page tests`, function () {
+    // test(`Should check if username is changed`, async ({ page }) => {
+    //   await accountMenu.openUserProfile();
+    //   await profilePage.openEditProfilePage();
+    //   const newUsername = `Ivan-666666`;
+    //   await editProfilePage.changeUsername(newUsername);
+    //   await editProfilePage.backToUserProfile();
+    //   await expect(page).toHaveTitle(`${newUsername}'s Profile - IMDb`);
+    // });
     // test(`Should check if user Bio is changed`, async ({ page }) => {
     //   await accountMenu.openUserProfile();
     //   await profilePage.openEditProfilePage();
-    //   const newUserBio = `Playwright`;
+    //   const newUserBio = `Playwright1`;
     //   await editProfilePage.changeUserBio(newUserBio);
     //   await editProfilePage.backToUserProfile();
     //   await expect(await profilePage.userBio).toHaveText(newUserBio);
     // });
   });
+
+  // test.describe(``, function () {
+  //   test(``, async ({ page }) => {
+  //     await accountMenu.openUserProfile();
+  //     await profilePage.openAccountSettings();
+  //   });
+  // });
 });

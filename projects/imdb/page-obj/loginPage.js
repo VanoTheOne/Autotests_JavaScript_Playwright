@@ -26,9 +26,15 @@ class LoginPage extends Base {
     return this.page.locator('//div[@class="a-box"]//input[@id="signInSubmit"]');
   }
 
+  get signInToExistingAccountButton() {
+    return this.page.locator('//div[@data-testid="sign_in_container"]//button[@data-testid="navigate_to_sign_in_button"]');
+  }
+
   async logInUser(page) {
     await this.navigate('https://www.imdb.com/');
     await this.header.signInButton.click();
+    await this.page.waitForTimeout(2000);
+    await this.signInToExistingAccountButton.click();
     await this.signInWithIMDbButton.click();
     await this.emailInputField.fill(login);
     await this.passwordInputField.fill(password);
