@@ -18,7 +18,7 @@ class Header extends Base {
   }
 
   get searchButton() {
-    return this.page.locator('//nav[@id="imdbHeader"]//button[@id="suggestion-search-button"]');
+    return this.page.locator('//main//h1[@class="sc-f494dac1-0 jOobeP"]');
   }
 
   get searchResult() {
@@ -42,6 +42,7 @@ class Header extends Base {
   }
 
   async openWatchlist() {
+    await this.page.waitForTimeout(2000);
     await this.watchlistButton.click();
   }
 

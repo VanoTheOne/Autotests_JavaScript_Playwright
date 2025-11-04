@@ -96,7 +96,7 @@ class EditProfilePage extends Base {
       await this.deleteImageButton.click();
       await this.confirmDeleteImageButton.click();
     } else {
-      console.log('Delete button not visible');
+      console.log('Delete button is not visible');
     }
   }
 }
