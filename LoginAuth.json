@@ -1,0 +1,197 @@
+{
+  "cookies": [
+    {
+      "name": "session-id",
+      "value": "133-6223549-1425048",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1800026969.71474,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ubid-main",
+      "value": "131-8953081-0937869",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1797002968.206572,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ad-oo",
+      "value": "0",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1765596563,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "UID",
+      "value": "155da95a3fd7a751d97d9fa1765466963",
+      "domain": ".scorecardresearch.com",
+      "path": "/",
+      "expires": 1799162965.298901,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "XID",
+      "value": "155da95a3fd7a751d97d9fa1765466963",
+      "domain": ".scorecardresearch.com",
+      "path": "/",
+      "expires": 1799162965.299027,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None",
+      "partitionKey": "https://imdb.com",
+      "_crHasCrossSiteAncestor": true
+    },
+    {
+      "name": "ad-id",
+      "value": "A4g5CNkvL0owrV9Ox5FQhr0",
+      "domain": ".amazon-adsystem.com",
+      "path": "/",
+      "expires": 1782919765.585185,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ad-privacy",
+      "value": "0",
+      "domain": ".amazon-adsystem.com",
+      "path": "/",
+      "expires": 1800026965.585373,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "ci",
+      "value": "eyJhZ2VTaWduYWwiOiJBRFVMVCIsImlzR2RwciI6ZmFsc2V9",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "lc-main",
+      "value": "en_US",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1797002967.035546,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "x-main",
+      "value": "EmKTG2Tsg67hkfdwwSt7qzvUCQNdLn44COyzLQ1ynSbrUs2AcaXR6xrJgLpnHsAU",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1797002968.206669,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "at-main",
+      "value": "Atza|gQA75-qtAwEBAIjBlu1y9EBtK-cDeCGzHjlF_K0mgwWzP5MpysK23rzVWxUFiV4n4tVXDdVx21eBH4_tVNQuUScFhIVZSaJMJyS7J8XrzC8KmbYbyqVH7W6hGLKZwAANjGUtoIiCKJEAHlk2d127Qc-cH9IZwxNDZnqHq53MMeV8WVOrlss2AV5dU0LyDMRm8qYql6JhJ8widhqy-wcZEopBIcB618e3LbMaB2BEMGX0FQw8yMww_FOLJQcHRHmE57pi2rsbshFdW3cZ4QJcmIS_MNh323cWr0BAL92DJx8IYXfpazLOCd-vg4BP98O55AgFlqGbU-y8_hndTkmMKgalMUHCFx8plalfWfsq-T7kOgFkDT6hJCY-",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1797002968.206697,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "sess-at-main",
+      "value": "TlRRAqvMTG2M8qgGqLr9+LSySvKnryCwx3S9pC5QHLs=",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1797002968.206726,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "session-id-time",
+      "value": "2082787201l",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1800026969.714859,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "session-token",
+      "value": "uJ9NiYBrhgr4w7g/yhnnJQLKsk+yBHirKwvlkoV2cHsm6PAXP8+zlJsBWB4OfC1tUbbc9eLDTPjlIWZc7kOno5KMS/RFcVADXVWaunGVxNO1qLCCUyXSPjEiXDC99wjnflYpUTRx6TqHJ++gojfeaijHKsJ5Ic2UvZaOq2LKEYkOsvENRpEuR356K7XPAxWkCRwo9yjV/VBoLOtUbusKZqSeLHBJDwAaxKfxQVTvhNXPnzkevO35N5xifLcsWI8VJGIWM1BO1n/HBRHO+Ze7ft4Fs3fJ/d49NXczi3jwv+lqveyGhcTvrpMCa2v4P4u58cFaD0SHbSdjuGAP5NKxsazQjX0WTNEcCY7W1r9v8IKRgEI3Fo3XmXRXkAWYAxgo",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1800026969.714909,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "log-main",
+      "value": "32edd819-da35-4f17-a1ea-026583802048",
+      "domain": ".imdb.com",
+      "path": "/",
+      "expires": 1765477768.67208,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "csm-hit",
+      "value": "tb:s-CV04DHND4Q4QHSB8T6VM|1765466969741&t:1765466969741&adb:adblk_no",
+      "domain": "www.imdb.com",
+      "path": "/",
+      "expires": 1795706969,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://www.imdb.com",
+      "localStorage": [
+        {
+          "name": "csa-tabbed-browsing",
+          "value": "{\"lastActive\":{\"visible\":false,\"pid\":\"vkrqjl-trpzs9-xizikk-7l825q\",\"tid\":\"tzh8zl-kjs8hm-j42mnv-jh17xq\",\"ent\":{\"rid\":\"9MGNVXEQW3HPRQ987J9B\",\"ety\":\"auth\",\"esty\":\"signInOpts\"}},\"lastInteraction\":{\"id\":\"j0qmmd-vlangn-5zozep-eqq9nj\",\"used\":false},\"time\":1765466965011,\"initialized\":true}"
+        },
+        {
+          "name": "csm-bf",
+          "value": "[\"9MGNVXEQW3HPRQ987J9B\",\"XA4A9BWN7PH2YPTFCD1D\"]"
+        },
+        {
+          "name": "csm:adb",
+          "value": "adblk_no"
+        },
+        {
+          "name": "csm-hit",
+          "value": "tb:s-CV04DHND4Q4QHSB8T6VM|1765466969741&t:1765466969741&adb:adblk_no"
+        },
+        {
+          "name": "csa-ctoken-9MGNVXEQW3HPRQ987J9B",
+          "value": "1765470565010"
+        },
+        {
+          "name": "csa-ctoken-XA4A9BWN7PH2YPTFCD1D",
+          "value": "1765470563109"
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-// @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
 /**
@@ -14,7 +13,7 @@ module.exports = defineConfig({
   timeout: 30000,
   // globalSetup: './projects/imdb/global/globalSetup.js',
   // globalTeardown: './global/globalTeardown.js',
-  testDir: '.',
+  testDir: '',
   testMatch: [
     '**/imdb/tests/**/*.spec.js',
     '**/vigbo/tests/**/*.spec.js',
