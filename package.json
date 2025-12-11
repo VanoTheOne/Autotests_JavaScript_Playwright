@@ -24,8 +24,10 @@
     "pretty": "prettier --write */**/*.js"
   },
   "dependencies": {
-    "axios": "^1.12.2",
+    "ajv": "^8.17.1",
+    "axios": "^1.13.2",
     "dotenv": "^17.2.2",
+    "jsonschema": "^1.5.0",
     "prettier": "^3.6.2"
   },
   "devDependencies": {

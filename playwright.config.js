@@ -16,7 +16,8 @@ module.exports = defineConfig({
   testDir: '',
   testMatch: [
     '**/imdb/tests/**/*.spec.js',
-    '**/vigbo/tests/**/*.spec.js'
+    '**/vigbo/tests/**/*.spec.js',
+    '**/api/tests/**/*.spec.js'
   ],
   /* Run tests in files in parallel */
   fullyParallel: true,
