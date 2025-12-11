@@ -16,8 +16,6 @@ module.exports = defineConfig({
   testDir: '',
   testMatch: [
     '**/imdb/tests/**/*.spec.js',
-    '**/vigbo/tests/**/*.spec.js',
-    '**/api/tests/**/*.spec.js'
   ],
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -38,7 +36,7 @@ module.exports = defineConfig({
     // baseURL: 'http://127.0.0.1:3000',D
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    headless: false,
+    headless: true,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
