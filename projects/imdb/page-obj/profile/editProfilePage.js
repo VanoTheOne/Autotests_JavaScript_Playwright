@@ -57,14 +57,14 @@ class EditProfilePage extends Base {
     await this.page.waitForTimeout(2000);
     await this.editUsernameButton.click();
     await this.usernameInputField.click();
-    
+
     const currentValue = await this.usernameInputField.inputValue();
-    
+
     let usernameToSet = newUsername;
     if (currentValue === newUsername) {
       usernameToSet = newUsername + '6';
     }
-    
+
     await this.usernameInputField.fill(usernameToSet);
     await this.saveChangesButton.click();
     await this.profileImageDialog.waitFor({ state: 'detached' });

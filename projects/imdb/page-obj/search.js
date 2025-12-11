@@ -14,7 +14,7 @@ class Search extends Base {
   }
 
   get searchResult() {
-    return this.page.locator('//main//h1[@class="sc-f494dac1-0 jOobeP"]');
+    return this.page.locator('[data-testid="find-results-section-title"] li').first();
   }
 
   get searchFilterContainer() {
