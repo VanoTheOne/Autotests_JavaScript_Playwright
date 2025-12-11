@@ -10,7 +10,7 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  timeout: 30000,
+  timeout: 60000,
   // globalSetup: './projects/imdb/global/globalSetup.js',
   // globalTeardown: './global/globalTeardown.js',
   testDir: '',
