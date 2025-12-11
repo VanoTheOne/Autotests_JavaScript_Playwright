@@ -6,4 +6,3 @@ blob-report
 allure-report/
 allure-results/
 env.js
-LoginAuth.json

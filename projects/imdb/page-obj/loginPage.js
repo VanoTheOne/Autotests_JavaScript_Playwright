@@ -11,23 +11,23 @@ class LoginPage extends Base {
   }
 
   get signInWithIMDbButton() {
-    return this.page.locator('//div[@class="display-button-container"]//a[@data-testid="sign_in_option_IMDB"]');
+    return this.page.locator('div[data-testid="sign_in_content_sign_in"] a[data-testid="sign_in_option_IMDB"]');
   }
 
   get emailInputField() {
-    return this.page.locator('//div[@class="a-box"]//input[@type="email"]');
+    return this.page.locator('input[type="email"]');
   }
 
   get passwordInputField() {
-    return this.page.locator('//div[@class="a-box"]//input[@type="password"]');
+    return this.page.locator('input[type="password"]');
   }
 
   get signInButton() {
-    return this.page.locator('//div[@class="a-box"]//input[@id="signInSubmit"]');
+    return this.page.locator('#signInSubmit');
   }
 
   get signInToExistingAccountButton() {
-    return this.page.locator('//div[@data-testid="sign_in_container"]//button[@data-testid="navigate_to_sign_in_button"]');
+    return this.page.locator('div[data-testid="sign_in_content_main"] button[data-testid="navigate_to_sign_in_button"]');
   }
 
   async logInUser(page) {

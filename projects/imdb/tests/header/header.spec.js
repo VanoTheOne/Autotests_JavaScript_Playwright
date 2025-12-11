@@ -16,25 +16,21 @@ test.describe(`Header tests`, function () {
     await base.navigate(`https://www.imdb.com/`);
   });
 
-  // test.describe(`Header smoke tests`, function () {
-  //   test(`Should check the transition to the user's watchlist page`, async ({ page }) => {
-  //     await header.openWatchlist();
-  //     await expect(page).toHaveTitle(`Your Watchlist`);
-  //   });
-  //   test(`Should check the needed movie is founded`, async ({ page }) => {
-  //     const movieTitle = `Blade Runner`;
-  //     await search.searchMovie(movieTitle);
-  //     await expect(await search.searchResult).toContainText(movieTitle);
-  //   });
-  //   test(`Should check if search filter is applyed`, async ({ page }) => {
-  //     await search.openSearchFilter();
-  //     await search.searchFilterTitles.click();
-  //     await expect(await search.searchFilterContainer).toHaveText(`Titles`);
-  //   });
-  //   test(`Should check if menu opens and closes`, async ({ page }) => {
-  //     await header.openMenu();
-  //     await header.closeMenu();
-  //     await expect(await search.searchInput).toBeVisible();
-  //   });
-  // });
+  test.describe(`Header smoke tests`, function () {
+    test(`Should check the needed movie is founded`, async ({ page }) => {
+      const movieTitle = `Blade Runner`;
+      await search.searchMovie(movieTitle);
+      await expect(search.searchResult).toContainText(movieTitle);
+    });
+    test(`Should check if search filter is applyed`, async ({ page }) => {
+      await search.openSearchFilter();
+      await search.searchFilterTitles.click();
+      await expect(search.searchFilterContainer).toHaveText(`Titles`);
+    });
+    test(`Should check if menu opens and closes`, async ({ page }) => {
+      await header.openMenu();
+      await header.closeMenu();
+      await expect(search.searchInput).toBeVisible();
+    });
+  });
 });

@@ -1,9 +1,8 @@
 const { browser } = require('node:test');
 
 class Base {
-  constructor(page, browser) {
+  constructor(page) {
     this.page = page;
-    this.browser = browser;
   }
 
   async navigate(url) {

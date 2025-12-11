@@ -6,98 +6,104 @@ class EditProfilePage extends Base {
   }
 
   get editUsernameButton() {
-    return this.page.locator('//div[@data-testid="user-info-username"]//button[@data-testid="user-info-edit"]');
+    return this.page.locator('[data-testid="user-info-username"] [data-testid="user-info-edit"]');
   }
 
   get editUserBioButton() {
-    return this.page.locator('//div[@data-testid="user-info-bio"]//button[@data-testid="user-info-edit"]');
+    return this.page.locator('[data-testid="user-info-bio"] [data-testid="user-info-edit"]');
   }
 
   get uploadImageButton() {
-    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//button[@data-testid="upe-image-select-uploadBtn"]');
-  }
-
-  get usernameField() {
-    return this.page.locator('//div[@class="ipc-promptable-base__content"]//input[@name="username-edit"]');
-  }
-
-  get userBioField() {
-    return this.page.locator('//div[@data-testid="promptable__pc"]//textarea[@id="textarea__0"]');
-  }
-
-  get saveChangesButton() {
-    return this.page.locator('//div[@class="ipc-promptable-base__content"]//button[@data-testid="prompt-saveButton"]');
-  }
-
-  get backButton() {
-    return this.page.locator('//div[@data-testid="edit-header"]//a[@data-testid="edit-header-back"]');
-  }
-
-  get editUsernameDialog() {
-    return this.page.locator('div[role="dialog"]');
-  }
-
-  get photoInput() {
-    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//input');
-  }
-
-  get saveUserProfileImageButton() {
-    return this.page.locator('//div[@data-testid="promptable"]//button[@data-testid="upe-image-upload-prompt-save"]');
-  }
-
-  get userProfileImage() {
-    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//img');
-  }
-
-  get noUserProfileImage() {
-    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//svg');
+    return this.page.locator('[data-testid="upe-image-select-fileInput"]');
   }
 
   get deleteImageButton() {
-    return this.page.locator('//div[@data-testid="upe-image-editor-section"]//button[@data-testid="upe-image-delete"]');
+    return this.page.locator('[data-testid="upe-image-delete"]');
   }
 
-  get confirmDeleteImageButton() {
-    return this.page.locator('//div[@data-testid="upe-image-delete-prompt"]//button[@data-testid="prompt-saveButton"]');
+  get usernameInputField() {
+    return this.page.locator('#text-input__0');
+  }
+
+  get userBioInputField() {
+    return this.page.locator('#textarea__0');
+  }
+
+  get profileImagePreview() {
+    return this.page.locator('[data-testid="user-info-container"] .ipc-image');
+  }
+
+  get saveChangesButton() {
+    return this.page.locator('[data-testid="prompt-saveButton"]');
+  }
+
+  get saveProfileImageButton() {
+    return this.page.locator('[data-testid="upe-image-upload-prompt-save"]');
+  }
+
+  get backButton() {
+    return this.page.locator('[data-testid="edit-header"] [data-testid="edit-header-back"]');
+  }
+
+  get editUsernameDialog() {
+    return this.page.locator('[role="dialog"]');
+  }
+
+  get profileImageDialog() {
+    return this.page.locator('[data-testid="promptable"]');
   }
 
   async changeUsername(newUsername) {
     await this.page.waitForTimeout(2000);
     await this.editUsernameButton.click();
-    await this.editUsernameDialog.waitFor({ state: 'visible' });
-    await this.usernameField.click();
-    await this.usernameField.fill(newUsername);
+    await this.usernameInputField.click();
+    
+    const currentValue = await this.usernameInputField.inputValue();
+    
+    let usernameToSet = newUsername;
+    if (currentValue === newUsername) {
+      usernameToSet = newUsername + '6';
+    }
+    
+    await this.usernameInputField.fill(usernameToSet);
     await this.saveChangesButton.click();
+    await this.profileImageDialog.waitFor({ state: 'detached' });
+    return usernameToSet;
   }
 
   async changeUserBio(newUserBio) {
     await this.page.waitForTimeout(2000);
     await this.editUserBioButton.click();
-    await this.editUsernameDialog.waitFor({ state: 'visible' });
-    await this.userBioField.click();
-    await this.userBioField.fill(newUserBio);
+    await this.userBioInputField.click();
+
+    const currentBio = await this.userBioInputField.inputValue();
+
+    let bioToSet = newUserBio;
+    if (currentBio === newUserBio) {
+      bioToSet = newUserBio + '1';
+    }
+    await this.userBioInputField.fill(bioToSet);
     await this.saveChangesButton.click();
+    await this.profileImageDialog.waitFor({ state: 'detached' });
+    return bioToSet;
   }
 
   async backToUserProfile() {
     await this.backButton.click();
   }
 
-  async uploadUserProfileImage(photoDir) {
+  async uploadProfileImage(imagePath) {
     await this.page.waitForTimeout(2000);
-    await this.photoInput.setInputFiles(photoDir);
-    await this.saveUserProfileImageButton.waitFor({ state: 'visible' });
-    await this.saveUserProfileImageButton.click();
+    await this.uploadImageButton.setInputFiles(imagePath);
+    await this.saveProfileImageButton.click();
+    await this.profileImageDialog.waitFor({ state: 'detached' });
   }
 
-  async deleteUserProfileImage() {
+  async deleteProgileImage() {
     await this.page.waitForTimeout(2000);
-    if (await this.deleteImageButton.isVisible()) {
-      await this.deleteImageButton.click();
-      await this.confirmDeleteImageButton.click();
-    } else {
-      console.log('Delete button is not visible');
-    }
+    await this.deleteImageButton.click();
+    await this.saveChangesButton.click();
+    await this.profileImageDialog.waitFor({ state: 'detached' });
   }
 }
 
